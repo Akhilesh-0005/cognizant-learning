@@ -63,7 +63,6 @@ END;
 
 -- ── Step 5: Execute the Stored Procedures ──
 
--- Get all employees in IT Department (DepartmentID = 3)
 EXEC sp_GetEmployeesByDepartment @DepartmentID = 3;
 
 -- Insert a new employee
@@ -77,11 +76,4 @@ EXEC sp_InsertEmployee
 -- Verify insertion
 EXEC sp_GetEmployeesByDepartment @DepartmentID = 3;
 
--- ============================================================
---  Expected Output (sp_GetEmployeesByDepartment, Dept 3 - IT):
---
---  EmployeeID | FirstName | LastName | DepartmentName | JoinDate
---  -----------+-----------+----------+----------------+------------
---  3          | Michael   | Johnson  | IT             | 2018-07-30
---  5          | Akhilesh  | Kumar    | IT             | 2024-06-01
--- ============================================================
+
