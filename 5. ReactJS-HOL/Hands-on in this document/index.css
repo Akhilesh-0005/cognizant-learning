@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  color: black;
+}
+
+.app {
+  padding: 30px;
+}
+
+.app h1 {
+  margin-bottom: 25px;
+}
+
+dd {
+  margin-bottom: 8px;
+}
