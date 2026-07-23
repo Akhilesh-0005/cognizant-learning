@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  color: black;
+}
+
+.container {
+  max-width: 850px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.office-image {
+  width: 250px;
+  height: 220px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.office {
+  margin-bottom: 30px;
+}
+
+.office h1 {
+  margin-bottom: 10px;
+}
