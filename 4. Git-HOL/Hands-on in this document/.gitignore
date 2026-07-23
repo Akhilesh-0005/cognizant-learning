@@ -1,0 +1,4 @@
+# Ignore merge/backup files
+*.orig
+*.bak
+*~
