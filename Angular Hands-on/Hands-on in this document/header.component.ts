@@ -1,0 +1,2 @@
+import { Component } from '@angular/core'; import { RouterLink } from '@angular/router';
+@Component({selector:'app-header',standalone:true,imports:[RouterLink],template:`<nav><strong>Student Course Portal</strong><a routerLink="/">Home</a><a routerLink="/courses">Courses</a><a routerLink="/enroll">Enroll</a><a routerLink="/enroll-reactive">Reactive Form</a><a routerLink="/profile">Profile</a></nav>`,styles:[`nav{padding:18px;background:#1f2937;color:white;display:flex;gap:20px}a{color:white;text-decoration:none}`]}) export class HeaderComponent {}

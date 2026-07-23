@@ -1,0 +1,1 @@
+import { Component } from '@angular/core'; import { EnrollmentService } from './enrollment.service'; @Component({standalone:true,template:`<div class="container"><h1>Student Profile</h1><p>Enrolled course IDs: {{ids.join(', ')||'None'}}</p></div>`}) export class StudentProfileComponent {get ids(){return this.e.getIds()}constructor(private e:EnrollmentService){}}

@@ -1,0 +1,2 @@
+import { Component } from '@angular/core';import { RouterOutlet } from '@angular/router';import { AsyncPipe,NgIf } from '@angular/common';import { HeaderComponent } from './header.component';import { LoadingService } from './loading.service';
+@Component({selector:'app-root',standalone:true,imports:[RouterOutlet,HeaderComponent,AsyncPipe,NgIf],template:`<app-header></app-header><div class="container" *ngIf="loading.isLoading$|async">Loading...</div><router-outlet></router-outlet>`})export class AppComponent{constructor(public loading:LoadingService){}}

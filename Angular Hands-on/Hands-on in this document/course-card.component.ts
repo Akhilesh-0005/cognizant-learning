@@ -1,0 +1,9 @@
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core'; import { CommonModule } from '@angular/common'; import { Course } from './course.model'; import { CreditLabelPipe } from './credit-label.pipe';
+@Component({selector:'app-course-card',standalone:true,imports:[CommonModule,CreditLabelPipe],template:`<article [ngClass]="cardClasses" [ngStyle]="{'border-left-color':borderColor}"><h3>{{course.name}}</h3><p>{{course.code}} · {{course.credits|creditLabel}}</p><span [ngSwitch]="course.gradeStatus"><b *ngSwitchCase="'passed'">Passed</b><b *ngSwitchCase="'failed'">Failed</b><b *ngSwitchDefault>Pending</b></span><div *ngIf="isExpanded"><p>Course ID: {{course.id}}</p></div><button (click)="enrollRequested.emit(course.id)">Enroll</button><button (click)="isExpanded=!isExpanded">Show Details</button></article>`,styles:[`article{padding:16px;border:1px solid #ddd;border-left:6px solid grey;border-radius:8px;background:white}.card--enrolled{box-shadow:0 0 0 2px #22c55e}.card--full{font-weight:600}.expanded{min-height:220px}`]})
+export class CourseCardComponent implements OnChanges {
+ @Input({required:true}) course!:Course; @Input() enrolled=false; @Output() enrollRequested=new EventEmitter<number>(); isExpanded=false;
+ get borderColor(){return this.course?.gradeStatus==='passed'?'green':this.course?.gradeStatus==='failed'?'red':'grey';}
+ // Getter keeps conditional class logic out of the template.
+ get cardClasses(){return {'card--enrolled':this.enrolled,'card--full':this.course?.credits>=4,'expanded':this.isExpanded};}
+ ngOnChanges(changes:SimpleChanges){if(changes['course'])console.log('Course changed:',changes['course'].previousValue,changes['course'].currentValue);}
+}

@@ -1,0 +1,1 @@
+import { Component } from '@angular/core';@Component({standalone:true,template:`<div class="container"><h1>404</h1><p>Page not found.</p></div>`})export class NotFoundComponent{}

@@ -1,0 +1,2 @@
+import { Injectable } from '@angular/core';import { Actions,createEffect,ofType } from '@ngrx/effects';import { catchError,map,of,switchMap } from 'rxjs';import { CourseService } from './course.service';import * as A from './course.actions';
+@Injectable() export class CourseEffects{loadCourses$=createEffect(()=>this.actions$.pipe(ofType(A.loadCourses),switchMap(()=>this.service.getCourses().pipe(map(courses=>A.loadCoursesSuccess({courses})),catchError(e=>of(A.loadCoursesFailure({error:e.message})))))));constructor(private actions$:Actions,private service:CourseService){}}

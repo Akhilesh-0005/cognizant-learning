@@ -1,0 +1,2 @@
+import { inject } from '@angular/core'; import { HttpInterceptorFn } from '@angular/common/http'; import { Router } from '@angular/router'; import { catchError, throwError } from 'rxjs';
+export const errorHandlerInterceptor:HttpInterceptorFn=(req,next)=>{const r=inject(Router);return next(req).pipe(catchError(e=>{if(e.status===401)r.navigate(['/']);if(e.status===500)console.error('Server error');return throwError(()=>e);}));};

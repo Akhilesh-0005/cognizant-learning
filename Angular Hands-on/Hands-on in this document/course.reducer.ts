@@ -1,0 +1,3 @@
+import { createReducer,on } from '@ngrx/store';import { Course } from './course.model';import * as A from './course.actions';
+export interface CourseState{courses:Course[];loading:boolean;error:string|null} export const initialCourseState:CourseState={courses:[],loading:false,error:null};
+export const courseReducer=createReducer(initialCourseState,on(A.loadCourses,s=>({...s,loading:true,error:null})),on(A.loadCoursesSuccess,(s,{courses})=>({...s,courses,loading:false})),on(A.loadCoursesFailure,(s,{error})=>({...s,error,loading:false})));
