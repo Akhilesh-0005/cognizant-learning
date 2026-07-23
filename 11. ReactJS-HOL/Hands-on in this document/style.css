@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  color: black;
+}
+
+.container {
+  padding: 30px 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.converter {
+  margin-top: 30px;
+}
+
+.converter h1 {
+  color: green;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.form-row label {
+  width: 90px;
+}
+
+.form-row input {
+  width: 140px;
+  padding: 4px;
+}
+
+.converter form > button {
+  margin-left: 90px;
+  margin-top: 4px;
+}
