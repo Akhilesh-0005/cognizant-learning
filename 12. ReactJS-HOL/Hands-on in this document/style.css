@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  color: black;
+}
+
+.container {
+  max-width: 650px;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 25px;
+}
+
+button {
+  cursor: pointer;
+  padding: 5px 12px;
+  margin-top: 10px;
+}
