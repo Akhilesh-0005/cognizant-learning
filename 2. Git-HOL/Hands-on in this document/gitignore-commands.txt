@@ -1,0 +1,29 @@
+Git Hands-On Lab 2 - .gitignore
+
+cd GitDemo
+
+# Create a log file
+echo "Sample application log" > application.log
+
+# Create the required log folder locally
+mkdir log
+echo "Sample log folder content" > log/sample.txt
+
+# Add these rules to .gitignore
+*.log
+log/
+
+# Verify ignored files/folders do not appear
+git status
+
+# Commit the ignore configuration
+git add .gitignore
+git commit -m "Add gitignore rules for log files and folders"
+
+# Verify
+git status
+
+# If files were already tracked before being ignored:
+git rm --cached application.log
+git rm -r --cached log
+git commit -m "Stop tracking ignored log files"
