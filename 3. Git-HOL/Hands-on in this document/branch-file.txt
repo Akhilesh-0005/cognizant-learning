@@ -1,0 +1,2 @@
+This file was created in GitNewBranch.
+It demonstrates changes made on a feature branch before merging into master.

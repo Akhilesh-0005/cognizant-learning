@@ -1,0 +1,126 @@
+Git Hands-On Lab 3 - Branching and Merging
+================================================
+
+BRANCHING
+---------
+
+1. Create a new branch named GitNewBranch:
+
+git branch GitNewBranch
+
+2. List local branches:
+
+git branch
+
+List local and remote branches:
+
+git branch -a
+
+The * symbol identifies the currently checked-out branch.
+
+3. Switch to GitNewBranch:
+
+git checkout GitNewBranch
+
+Alternatively:
+
+git switch GitNewBranch
+
+Create a sample file:
+
+echo "This file was created in GitNewBranch." > branch-file.txt
+
+Add another line:
+
+echo "Branching and merging hands-on lab." >> branch-file.txt
+
+4. Stage and commit the changes:
+
+git add branch-file.txt
+git commit -m "Add file in GitNewBranch"
+
+5. Check status:
+
+git status
+
+
+MERGING
+-------
+
+1. Switch back to master:
+
+git checkout master
+
+Alternatively:
+
+git switch master
+
+NOTE:
+If your repository uses main instead of master, use:
+git switch main
+
+2. Display command-line differences between master and GitNewBranch:
+
+git diff master GitNewBranch
+
+Or, while on master:
+
+git diff GitNewBranch
+
+3. View differences using P4Merge:
+
+git difftool master GitNewBranch
+
+If P4Merge has been configured as your Git difftool, Git opens the
+visual differences in P4Merge.
+
+Example P4Merge configuration:
+
+git config --global diff.tool p4merge
+git config --global difftool.p4merge.cmd '"C:/Program Files/Perforce/p4merge.exe" "$LOCAL" "$REMOTE"'
+
+The exact executable path depends on where P4Merge is installed.
+
+4. Merge GitNewBranch into master:
+
+git merge GitNewBranch
+
+5. Observe the Git history after merging:
+
+git log --oneline --graph --decorate
+
+6. Delete the merged branch:
+
+git branch -d GitNewBranch
+
+Verify branches:
+
+git branch -a
+
+Verify repository status:
+
+git status
+
+
+OPTIONAL REMOTE BRANCH WORKFLOW
+-------------------------------
+
+Push the branch:
+
+git push -u origin GitNewBranch
+
+After merging, delete the remote branch if required:
+
+git push origin --delete GitNewBranch
+
+
+MODERN MAIN-BRANCH NOTE
+-----------------------
+
+The hands-on document uses "master" as the trunk branch.
+If your GitHub/GitLab repository uses "main", replace master with main:
+
+git switch main
+git diff main GitNewBranch
+git merge GitNewBranch
+git branch -d GitNewBranch
