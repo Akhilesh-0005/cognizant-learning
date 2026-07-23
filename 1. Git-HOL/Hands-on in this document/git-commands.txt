@@ -1,0 +1,80 @@
+Git Hands-On Lab - GitDemo
+==========================
+
+STEP 1 - Git Configuration
+--------------------------
+Check Git installation:
+git version
+
+Configure username:
+git config --global user.name "Your Name"
+
+Configure email:
+git config --global user.email "your-email@example.com"
+
+Verify global configuration:
+git config --global --list
+
+
+STEP 2 - Configure Notepad++ as Git Editor
+------------------------------------------
+Check whether Notepad++ can be opened:
+notepad++
+
+Configure Notepad++ as the default Git editor:
+git config --global core.editor "notepad++.exe -multiInst -nosession"
+
+Open the global Git configuration using the editor:
+git config --global -e
+
+
+STEP 3 - Create GitDemo Repository
+----------------------------------
+Initialize repository:
+git init GitDemo
+
+Move into repository:
+cd GitDemo
+
+Show files including hidden files:
+ls -al
+
+Create welcome.txt:
+echo "Welcome to the version control" >> welcome.txt
+
+Verify files:
+ls -al
+
+Display file contents:
+cat welcome.txt
+
+Check repository status:
+git status
+
+Track welcome.txt:
+git add welcome.txt
+
+Commit using the configured editor:
+git commit
+
+Check status:
+git status
+
+
+REMOTE REPOSITORY
+-----------------
+Add your remote repository:
+git remote add origin <YOUR-REMOTE-REPOSITORY-URL>
+
+Pull from remote:
+git pull origin master
+
+Push to remote:
+git push origin master
+
+NOTE:
+Many new Git hosting repositories now use 'main' as the default branch.
+If your remote repository uses main, use:
+
+git pull origin main
+git push -u origin main
